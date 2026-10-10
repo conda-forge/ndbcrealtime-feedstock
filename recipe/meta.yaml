@@ -1,13 +1,13 @@
 {% set name = "ndbcrealtime" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ndbcrealtime-{{ version }}.tar.gz
-  sha256: 6f5e5b8c28c70e102659f4e2e2f28ff793cbd4f6540dfd7e2d102fb77828baee
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/ndbcrealtime-{{ version }}.tar.gz
+  sha256: 0215716eae75d20d631ae19d84b697dfd389ca25aa0c605129120b557f3618d0
 
 build:
   noarch: python
