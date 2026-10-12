@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  version: "0.0.6"
+
+package:
+  name: ndbcrealtime
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/n/ndbcrealtime/ndbcrealtime-${{ version }}.tar.gz
+  sha256: 0215716eae75d20d631ae19d84b697dfd389ca25aa0c605129120b557f3618d0
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - aiohttp
+    - xmltodict
+
+tests:
+  - python:
+      imports:
+        - ndbcrealtime
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: NDBC Real Time Buoy Observation Data Wrapper.
+  license: Apache-2.0
+  license_file:
+    - LICENSE.txt
+    - LICENSE
+  homepage: https://github.com/djtimca/ndbc-api
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
